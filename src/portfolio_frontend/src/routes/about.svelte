@@ -18,7 +18,7 @@
               </p>
               <p>
                 Creating magic daily on the internet. You can send me 
-                 an email at <span class="info-text">adeneyeabiodun@gmail.com</span> 
+                 an email at <span class="info-text">demaligregg123@gmail.com</span> 
               </p>
           </div>
         </div>
