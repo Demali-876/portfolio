@@ -9,15 +9,16 @@
           <h2 class="about-title">Hi, I'm Demali👋</h2>
           <div class="about-subtitle">
               <p>
-                Software Engineer and a Technical Writer with a solid background in Computer Science, 
-                I’m passionate about making the web accessible for everyone. 
-                I design and develop visually compelling applications with user-friendly interaction that 
-                drive business growth and improve user experience. When I’m not solving problems, 
-                I love to create technical content for engineers and tech startups across the globe.
+                I am a blockchain solutions architect with a background in computer science, 
+                I'm passionate about exploring the novel use cases of blockchain technology, 
+                I design and develop powerful on-chain applications using the Internet Computer Protocol
+                that ensures business security, growth, and scalability with a seamless on-chain user experience.
+                When I am not thinking of new use cases for blockchain technology I love meeting new people, learning new languages and experience new cultures. 
+                At my core, I'm dedicated to transforming ideas into reality.
  
               </p>
               <p>
-                Creating magic daily on the internet. You can send me 
+                Bring your ideas to life on the internet computer protocol. You can send me 
                  an email at <span class="info-text">demaligregg123@gmail.com</span> 
               </p>
           </div>
