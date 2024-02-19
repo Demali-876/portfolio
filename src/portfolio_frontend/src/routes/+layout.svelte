@@ -20,7 +20,6 @@
         max-width: 1400px;
         margin: 50px auto;
         background-color: rgba(0, 0, 0, 0); 
-        
         color: #fff
     }
 </style>

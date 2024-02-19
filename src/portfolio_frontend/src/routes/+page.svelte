@@ -76,13 +76,11 @@
 		height: 56vh;
 		margin: -155px auto;
 	}
-    
-   
     .info .info-text {
         position: relative;
     }
 
-	.scroll-button { 
+	.scroll-button {
 		display: flex;
 		border: none;
 		outline: none;
