@@ -17,7 +17,6 @@
 			<h2 class="subtitle">
 			  On a mission to bring blockchain solutions to businesses and individuals.
 			</h2>
-			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 			<div style="color:black" class="scroll-button animate-scroll" tabindex="0">
 			  <a href="/about">See More About Me</a><div class="arrow">→</div>
 			</div>
