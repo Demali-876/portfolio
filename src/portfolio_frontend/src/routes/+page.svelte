@@ -17,8 +17,8 @@
 			<h2 class="subtitle">
 			  On a mission to bring blockchain solutions to businesses and individuals.
 			</h2>
-			<div style="color:black" class="scroll-button animate-scroll" tabindex="0">
-			  <a href="/about">See More About Me</a><div class="arrow">→</div>
+			<div style="color:cyan" class="scroll-button animate-scroll" tabindex="0">
+			  <a style ="color:cyan" href="/about">See More About Me</a><div class="arrow">→</div>
 			</div>
 		  </div>
 		</div>
@@ -57,7 +57,7 @@
         position: relative;
         font: inherit;
         margin: 0;
-		text-align: left;
+		    text-align: left;
         line-height: 130%;
         width: fit-content;
         font-weight: 800;

@@ -9,6 +9,11 @@
 	</head>
 	<body>
 		<div id="svelte">%sveltekit.body%</div>
+        <footer>
+            <a href="https://internetcomputer.org" target="_blank">
+                <img src="/logo2.svg" alt="Logo" id="footer-logo">
+            </a>
+        </footer>
 	</body>
 </html>
 
@@ -17,21 +22,22 @@
     background-position: left top;
 	font-family: "Inter", sans-serif;
 	margin: 0;
-	background-repeat: no-repeat;
+    background-image: url('/gradient.png');
+    background-size: cover;
+    background-position: center;
 	}
 
 	* {
 	box-sizing: border-box;
-	
 	}
 
 	a {
 	text-decoration: none;
-    color: black;
+    color: white;
 	}
 
 	:root{
-		--background: #ecebe8;
+		--background: transparent;
 	}
 
 
@@ -64,13 +70,27 @@
         margin: 1em;
         font-size: 0.85rem;
         letter-spacing: 1px;
-        color: black;
+        color: white;
     }
 
     .nav-logo {
         position: relative;
         line-height: 1;
         font-size: 1.1rem;
-        color: black;
+        color: white;
+    }
+    footer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        padding: 10px 0;
+        background: transparent;
+    }
+
+    #footer-logo {
+        width: 140px;
+        height: auto;
     }
 </style>
