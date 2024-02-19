@@ -1,4 +1,4 @@
-<!-- src/routes/page.svelte -->
+<!-- src/routes/index.svelte -->
 <svelte:head>
 	<title>Demali Gregg</title>
 </svelte:head>
@@ -15,9 +15,8 @@
 			  </h1>
 			</div>
 			<h2 class="subtitle">
-			  On a mission to bring blockchain solutions to businesses and individuals.
+			  On a mission to help SMEs across the globe do businesses seamlessly and digitally.
 			</h2>
-			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 			<div style="color:black" class="scroll-button animate-scroll" tabindex="0">
 			  <a href="/about">See More About Me</a><div class="arrow">→</div>
 			</div>

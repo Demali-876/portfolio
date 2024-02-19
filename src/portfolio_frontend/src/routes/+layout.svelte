@@ -1,4 +1,4 @@
-<!-- src/routes/__layout.svelte -->
+<!-- src/routes/+layout.svelte -->
 <nav>
     <div class="nav-container">
         <a href="/" class="nav-logo" title="Back to Homepage">Demali Gregg</a>
@@ -10,7 +10,7 @@
     </div>
 </nav>
 
-<div class="container"> 
+<div class="container">
   <!-- Pages will be injected below -->
      <slot></slot>
 </div>
