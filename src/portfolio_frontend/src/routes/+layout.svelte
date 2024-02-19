@@ -1,4 +1,7 @@
 <!-- src/routes/+layout.svelte -->
+<script context="module">
+    export const prerender = true;
+  </script>
 <nav>
     <div class="nav-container">
         <a href="/" class="nav-logo" title="Back to Homepage">Demali Gregg</a>
