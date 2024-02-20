@@ -123,7 +123,7 @@
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
+    transition: max-height 1.5s ease, opacity 1.5s ease;
     opacity: 0;
 }
 .faq-answer.active {
