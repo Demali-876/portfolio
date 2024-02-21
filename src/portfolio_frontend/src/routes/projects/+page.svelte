@@ -3,7 +3,7 @@
     let projects = [
       {
         name: "ChatCode",
-        description: "A collaborative coding environment with real-time chat features.",
+        description: "Smart Contract programming language created using lark parser in python, leverages AI and API calls for Interpretation.",
         imageUrl: "/thumbnail1.jpg",
         githubUrl: "https://github.com/Demali-876/ChatCode"
       },
@@ -15,18 +15,18 @@
       },
       {
         name: "Portfolio",
-        description: "My personal portfolio showcasing my projects and skills.",
+        description: "My personal portfolio showcasing my projects and skills.You are currently view this project!",
         imageUrl: "/thumbnail3.jpg",
         githubUrl: "https://github.com/Demali-876/portfolio"
       }
     ];
   </script>
-  
+
 <svelte:head>
 	<title>Projects</title>
 </svelte:head>
 <div class="container">
-    <h1 class="heading">Check Out My Projects</h1>
+    <h1 class="heading">My Projects</h1>
     <div class="projects-container">
         {#each projects as {name, description, imageUrl, githubUrl}, index}
             <div class="project-card">
@@ -50,10 +50,10 @@
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    text-align: center; /* Center content */
+    text-align: center;
 }
 .heading {
-    margin-bottom: 40px; /* Adjust spacing as needed */
+    margin-bottom: 40px;
 }
 .projects-container {
     display: grid;
@@ -88,8 +88,12 @@
     padding: 10px;
     border-radius: 5px;
     text-decoration: none;
+    transition: background-color 0.3s;
 }
-
+.github-link:hover{
+        background-color: rgb(174, 1, 174);
+        color: white;
+    }
 .github-profile {
     text-align: center;
     margin-top: 40px;
@@ -109,11 +113,19 @@
 @media (max-width: 600px) {
     .projects-container {
         grid-template-columns: 1fr;
+        margin-left: 5rem;
     }
-
+    .heading {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 5rem;
+    }
     .project-card {
         width: 100%;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
 }
-
 </style>

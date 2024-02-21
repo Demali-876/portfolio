@@ -1,21 +1,30 @@
 <!-- src/routes/about.svelte -->
 <script>
+  import { slide } from 'svelte/transition';
   let faqs = [
     {
-      question: "What is blockchain technology?",
-      answer: "Blockchain technology is a decentralized, distributed ledger that records the provenance of a digital asset."
-    },
-    {
-      question: "How does building on-chain benefit individuals and businesses?",
-      answer: "Building on-chain ensures transparency, security, and immutability, providing benefits like reduced fraud, faster transactions, and lower costs."
+      question: "What is Blockchain Technology?",
+      answer: "Blockchain technology is a revolutionary method of recording data across a network of computers secured by cryptographic methods, making it tamper-proof. Data is verified by network participants in the form of new blocks, ensuring permanence and transparency. This method removes the need for intermediaries, revolutionizing trust in digital transactions."
     },
     {
       question: "What is the Internet Computer Protocol?",
-      answer: "The Internet Computer Protocol (ICP) aims to extend the public internet so it can natively host websites, software systems, and open internet services."
+      answer: "Developed by the Dfinity Foundation, the Internet Computer Protocol (ICP) is an innovative blockchain platform designed to extend the capabilities of the public internet, allowing for the native hosting of websites, software systems, and services directly on the blockchain. This groundbreaking approach enables developers to deploy their applications directly onto the public internet, with all activities and operations hosted on-chain, offering a seamless and decentralized web experience. This website is hosted on the Internet Computer!"
+    },
+    {
+      question: "How Does Building on the Internet Computer Benefit Individuals and Businesses?",
+      answer: "Building on the Internet Computer provides unparalleled security, transparency, and scalability. It enables the creation of tamper-proof, efficient, and globally accessible applications, reducing operational costs and enhancing user trust."
     },
     {
       question: "What design approach do I employ in my solutions?",
-      answer: "I focus on user-centric design, ensuring that solutions are accessible, intuitive, and leverage blockchain technology effectively to meet users' needs."
+      answer: "Enterprise Architecture is a strategic planning framework that aligns IT projects with business objectives, ensuring that technology investments add value. Software Oriented Architecture is an approach to software development that allows services to communicate over a network. In my blockchain solutions, EA ensures that blockchain projects align with broader business goals, while SOA enables modular, reusable components that increase the flexibility and scalability of applications."
+    },
+    {
+      question: "What is Motoko and SvelteKit?",
+      answer: "Motoko is a programming language designed specifically for the Internet Computer, offering a seamless development experience for building scalable, secure blockchain applications. SvelteKit, as a frontend framework, complements Motoko by enabling fast, reactive user interfaces. This combination ensures efficient, user-friendly applications built on a robust blockchain foundation."
+    },
+    {
+      question: "How can Businesses and Individuals Get Started with Blockchain Solutions?",
+      answer: "To get started, reach out for a consultation. We'll discuss your needs, the potential blockchain can bring to your project, and how our services can help you achieve your goals. From ideation to launch, we guide you through every step, ensuring a smooth journey into the world of blockchain technology."
     }
   ];
 
@@ -35,13 +44,14 @@
                   <p>
                     I am a blockchain solutions architect with a background in computer science,
                     I'm passionate about exploring the novel use cases of blockchain technology,
-                    I design and develop powerful on-chain applications using the Internet Computer Protocol
-                    that ensures business security, growth, and scalability with a seamless on-chain user experience.
+                    I design and develop powerful on-chain applications using the Internet Computer Protocol.
+                    These Dapps ensure business security, growth, and scalability with a seamless on-chain user experience.
                     When I am not thinking of new use cases for blockchain technology I love meeting new people, learning new languages and experience new cultures. 
                     At my core, I'm dedicated to transforming ideas into reality.
                   </p>
                   <p>
                     Bring your ideas to life on the internet computer protocol.
+                    The future is ON-CHAIN! Let's Build!
                   </p>
               </div>
             </div>
@@ -50,10 +60,10 @@
                 {#each faqs as {question, answer}, index}
                   <button class="faq-question {activeFaq === index ? 'active' : ''}" on:click={() => activeFaq = activeFaq === index ? null : index}>
                     {question}
-                    <span class="arrow">▼</span>
+                    <span class="arrow">{activeFaq === index ? '▲' : '▼'}</span>
                   </button>
                   {#if activeFaq === index}
-                    <div class="faq-answer {activeFaq === index ? 'active' : ''}">{answer}</div>
+                    <div transition:slide class="faq-answer {activeFaq === index ? 'active' : ''}">{answer}</div>
                   {/if}
                 {/each}
               </aside>
@@ -101,8 +111,8 @@
     width: 100%;
     padding: 0.5em 0;
     color: inherit; 
-    display: block; /* Ensure it fills the container width */
-    margin-bottom: 1px; /* For the separator line */
+    display: block;
+    margin-bottom: 1px; 
     background-color: transparent;
     border: none;
     text-align: left;
@@ -129,6 +139,32 @@
 .faq-answer.active {
     max-height: 1000px;
     opacity: 1;
+}
+@media (max-width: 768px) {
+    .inner-container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .about-content, .faq-container {
+        flex: none;
+        width: 100%;
+        margin: 0;
+    }
+    .about-title{
+      margin-left: 5rem;
+    }
+    .faq-container{
+      margin-left: 2.5rem;
+    }
+    .main_container, .about-subtitle > p {
+        margin: 0 20px;
+    }
+
+    .about-subtitle > p {
+        width: auto;
+        margin-left: 5rem;
+    }
 }
 
 </style>

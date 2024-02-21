@@ -2,8 +2,8 @@
     let platforms = [
         { 
             name: "Discord", 
-            link: "https://discord.com", 
-            icon: "discord.svg", 
+            link: "https://discord.com/users/784929659854782524", 
+            icon: "discord.svg",
             description: "Join me on Discord for lively discussions on Web3 and more.", 
             cta: "Connect on Discord"
         },
@@ -11,28 +11,28 @@
             name: "OpenChat", 
             link: "https://oc.app", 
             icon: "OpenChat.svg",
-            description: "Be Sure to check out OpenChat Username Darckhorse87.", 
+            description: "Be sure to check out OpenChat Username Darckhorse87.", 
             cta: "Connect on OpenChat"
         },
         {
             name: "Gmail", 
             link: "mailto:demaligregg123@gmail.com",
             icon: "gmail.svg",
-            description: "Feel free to send emails if you have any questions", 
+            description: "Feel free to send an email if you have any questions", 
             cta: "Send me an email"
         },
         {
             name: "LinkedIn",
-            link: "https://linkedin.com",
+            link: "https://www.linkedin.com/in/demali-gregg-5552392a1/",
             icon: "linkedin.svg",
             description: "If you are a linkedin user feel free visit My Linkedin Page, lets connects", 
             cta: "Connect on linkedin"
         },
         {
             name: "Twitter",
-            link: "https://twitter.com", 
+            link: "https://twitter.com/demali_icp", 
             icon: "twitter.svg",
-            description: "I am trying to use Twitter(X) more so be sure to follow me on there", 
+            description: "I created a Twitter(X) account specifically for this so be sure to follow me on there :-)", 
             cta: "Follow me on twitter"
         },
     ];
@@ -68,6 +68,11 @@
 .contact-page {
     text-align: center;
 }
+.heading {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
 .platforms-grid {
     display: flex;
@@ -82,7 +87,7 @@
     margin-bottom: 20px;
     width: 48%;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    transition: transform 0.3s ease;
 }
 
 .platform-card:hover {
@@ -103,5 +108,29 @@
     border-radius: 5px;
     text-decoration: none;
     margin-top: 10px;
+    transition: background-color 0.3s;
+}
+.platform-card .cta-button:hover{
+    background-color: rgb(174, 1, 174);
+    color: white;
+}
+@media (max-width: 768px) {
+    .platforms-grid {
+        justify-content: center; 
+        display: flex;
+        flex-direction: column;
+    }
+    .heading {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 3.5rem;
+    }
+
+    .platform-card {
+        width: 100%;
+        margin:auto 25px;
+        margin-bottom: 20px;
+    }
 }
 </style>

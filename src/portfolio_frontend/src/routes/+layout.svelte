@@ -1,7 +1,7 @@
 <!-- src/routes/+layout.svelte -->
 <nav>
     <div class="nav-container">
-        <a href="/" class="nav-logo" title="Back to Homepage">Demali Gregg</a>
+        <a href="/" class="nav-logo" title="Back to Homepage">Home</a>
         <div class="nav-links">
             <a href="/about" class="link">About</a>
             <a href="/projects" class="link">Projects</a>
