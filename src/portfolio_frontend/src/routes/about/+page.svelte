@@ -29,6 +29,18 @@
   ];
 
   let activeFaq = null;
+  import { backend } from "$lib/canisters";
+
+  let greeting = "";
+
+  function onSubmit(event) {
+    const name = event.target.name.value;
+    backend.greet(name).then((response) => {
+      greeting = response;
+    });
+    return false;
+  }
+
 </script>
 
 <svelte:head>
@@ -44,8 +56,7 @@
                   <p>
                     I am a blockchain solutions architect with a background in computer science,
                     I'm passionate about exploring the novel use cases of blockchain technology,
-                    I design and develop powerful on-chain applications using the Internet Computer Protocol.
-                    These Dapps ensure business security, growth, and scalability with a seamless on-chain user experience.
+                    specializing in the Internet Computer Protocol, I enable businesses to build scalable, secure, and efficient decentralized applications directly on the blockchain. This cuts costs, enhances data integrity, and opens new innovation channels.
                     When I am not thinking of new use cases for blockchain technology I love meeting new people, learning new languages and experience new cultures. 
                     At my core, I'm dedicated to transforming ideas into reality.
                   </p>
@@ -54,6 +65,16 @@
                     The future is ON-CHAIN! Let's Build!
                   </p>
               </div>
+              <div class="canister-interact">
+                <h2>Interact with a Canister</h2>
+                <form action="#" on:submit|preventDefault={onSubmit}>
+                    <input id="name" name="name" alt="Enter your name" placeholder="Enter your name" type="text" />
+                    <button type="submit">Submit</button>
+                </form>
+                {#if greeting}
+                    <p class="greeting-response">Backend Canister b77ix-eeaaa-aaaaa-qaada-cai says: {greeting}</p>
+                {/if}
+            </div>
             </div>
             <aside class="faq-container">
                 <h2>FAQs</h2>
@@ -84,7 +105,7 @@
         margin-top: 1rem;
     }
     .about-subtitle >p {
-        width: 80%;
+        width: 90%;
         font-weight: normal;
         font-size: 1rem;
         line-height: 2rem;
@@ -110,18 +131,15 @@
     text-align: left;
     width: 100%;
     padding: 0.5em 0;
-    color: inherit; 
+    color: inherit;
     display: block;
-    margin-bottom: 1px; 
+    margin-bottom: 1px;
     background-color: transparent;
     border: none;
+    border-top: 1px solid #ccc;
     text-align: left;
-    width: 100%;
 }
 
-.faq-question:not(:last-child) {
-    border-bottom: 1px solid #ccc;
-}
 .arrow {
     position: absolute;
     right: 0;
@@ -145,7 +163,6 @@
         flex-direction: column;
         justify-content: flex-start;
     }
-
     .about-content, .faq-container {
         flex: none;
         width: 100%;
@@ -166,5 +183,37 @@
         margin-left: 5rem;
     }
 }
+.canister-interact h2 {
+    margin-top: 2rem;
+}
+.canister-interact form {
+    margin-top: 1rem;
+}
+.canister-interact input, .canister-interact button {
+    line-height: 1;
+    height: auto;
+    width: auto;
+    font-size: 1rem;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    border: none;
+    background-color: purple;
+}
 
+.canister-interact input {
+    margin-right: 0.5rem;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.canister-interact button:hover {
+    background-color: #570271;
+}
+
+.greeting-response {
+    margin-top: 1rem;
+    color: white;
+}
 </style>

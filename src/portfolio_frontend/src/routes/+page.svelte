@@ -3,7 +3,6 @@
 	<title>Demali Gregg</title>
 </svelte:head>
 
-
 <div class="container">
 	<div class="info">
 		<div class="animate-background">
@@ -21,10 +20,9 @@
 			  <a style ="color:cyan" href="/about">Learn more about me</a><div class="arrow">→</div>
 			</div>
 		  </div>
-		</div>
+    </div>
 	</div>
 </div>
-
 <div class="background-div"></div>
 
 
@@ -87,4 +85,5 @@
 .scroll-button .arrow {
   margin-left: 0.50rem;
 }
+
 </style>

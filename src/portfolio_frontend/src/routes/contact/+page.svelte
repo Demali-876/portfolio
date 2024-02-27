@@ -25,7 +25,7 @@
             name: "LinkedIn",
             link: "https://www.linkedin.com/in/demali-gregg-5552392a1/",
             icon: "linkedin.svg",
-            description: "If you are a linkedin user feel free visit My Linkedin Page, lets connects", 
+            description: "If you are a linkedin user feel free visit My Linkedin Page, lets connect!", 
             cta: "Connect on linkedin"
         },
         {

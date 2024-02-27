@@ -1,26 +1,33 @@
-<!-- src/routes/+layout.svelte -->
-<nav>
+<script>
+    import "../app.pcss";
+    import Loading from '../lib/loading.svelte';
+    import { navigating } from '$app/stores';
+  </script>
+  
+  <nav>
     <div class="nav-container">
-        <a href="/" class="nav-logo" title="Back to Homepage">Home</a>
-        <div class="nav-links">
-            <a href="/about" class="link">About</a>
-            <a href="/projects" class="link">Projects</a>
-            <a href="/contact" class="link">Contact</a>
-        </div>
+      <a href="/" class="nav-logo" title="Back to Homepage">Home</a>
+      <div class="nav-links">
+        <a href="/about" class="link">About</a>
+        <a href="/projects" class="link">Projects</a>
+        <a href="/contact" class="link">Contact</a>
+      </div>
     </div>
-</nav>
-
-<div class="container">
-  <!-- Pages will be injected below -->
-     <slot></slot>
-</div>
-
-<style>
-     .container {
-        max-width: 1400px;
-        margin: 50px auto;
-        background-color: rgba(0, 0, 0, 0); 
-        color: #fff
+  </nav>
+  {#if $navigating}
+  <Loading></Loading>
+  {:else}
+  <div class="container">
+    <slot></slot>
+  </div>
+{/if}
+  
+  <style>
+    .container {
+      max-width: 1400px;
+      margin: 50px auto;
+      background-color: rgba(0, 0, 0, 0); 
+      color: #fff;
     }
-</style>
-
+  </style>
+  
