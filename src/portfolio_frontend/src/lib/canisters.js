@@ -10,4 +10,3 @@ const buildingOrTesting = building || process.env.NODE_ENV === "test";
 export const backend = buildingOrTesting
   ? dummyActor()
   : createActor(canisterId);
-

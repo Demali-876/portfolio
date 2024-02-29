@@ -1,6 +1,6 @@
 <!-- src/routes/about.svelte -->
 <script>
-  import { slide } from 'svelte/transition';
+  import { slide, fade, fly } from 'svelte/transition';
   let faqs = [
     {
       question: "What is Blockchain Technology?",
@@ -9,6 +9,10 @@
     {
       question: "What is the Internet Computer Protocol?",
       answer: "Developed by the Dfinity Foundation, the Internet Computer Protocol (ICP) is an innovative blockchain platform designed to extend the capabilities of the public internet, allowing for the native hosting of websites, software systems, and services directly on the blockchain. This groundbreaking approach enables developers to deploy their applications directly onto the public internet, with all activities and operations hosted on-chain, offering a seamless and decentralized web experience. This website is hosted on the Internet Computer!"
+    },
+    {
+      question:"What is a Canister?",
+      answer:"A canister on the Internet Computer Protocol (ICP) can be thought of as a smart container that holds both the code (software) and the data it operates on. Imagine it as a combination of a mini-computer and a storage unit, living on the Internet Computer's blockchain network. This setup allows the canister to run applications, manage data, and interact with users or other canisters autonomously."
     },
     {
       question: "How Does Building on the Internet Computer Benefit Individuals and Businesses?",
@@ -27,8 +31,9 @@
       answer: "To get started, reach out for a consultation. We'll discuss your needs, the potential blockchain can bring to your project, and how our services can help you achieve your goals. From ideation to launch, we guide you through every step, ensuring a smooth journey into the world of blockchain technology."
     }
   ];
-
   let activeFaq = null;
+
+
   import { backend } from "$lib/canisters";
 
   let greeting = "";
@@ -57,7 +62,7 @@
                     I am a blockchain solutions architect with a background in computer science,
                     I'm passionate about exploring the novel use cases of blockchain technology,
                     specializing in the Internet Computer Protocol, I enable businesses to build scalable, secure, and efficient decentralized applications directly on the blockchain. This cuts costs, enhances data integrity, and opens new innovation channels.
-                    When I am not thinking of new use cases for blockchain technology I love meeting new people, learning new languages and experience new cultures. 
+                    When I am not thinking of new use cases for blockchain technology I love meeting new people, learning new languages and experiencing new cultures. 
                     At my core, I'm dedicated to transforming ideas into reality.
                   </p>
                   <p>
@@ -65,28 +70,27 @@
                     The future is ON-CHAIN! Let's Build!
                   </p>
               </div>
-              <div class="canister-interact">
-                <h2>Interact with a Canister</h2>
-                <form action="#" on:submit|preventDefault={onSubmit}>
-                    <input id="name" name="name" alt="Enter your name" placeholder="Enter your name" type="text" />
-                    <button type="submit">Submit</button>
-                </form>
-                {#if greeting}
-                    <p class="greeting-response">Backend Canister b77ix-eeaaa-aaaaa-qaada-cai says: {greeting}</p>
-                {/if}
-            </div>
-            </div>
+              <h2>Interact with a Canister</h2>
+              <form action="#" on:submit|preventDefault={onSubmit}>
+                <input id="name" alt="Name" type="text" placeholder="Enter your Name"/>
+                <button type="submit">Submit</button>
+              </form>
+              {#if greeting}
+                <p class="greeting-response" transition:fly={{ y: 30, duration: 300 }}>Backend Canister says: {greeting}</p>
+              {/if}
+          </div>
             <aside class="faq-container">
-                <h2>FAQs</h2>
-                {#each faqs as {question, answer}, index}
-                  <button class="faq-question {activeFaq === index ? 'active' : ''}" on:click={() => activeFaq = activeFaq === index ? null : index}>
-                    {question}
-                    <span class="arrow">{activeFaq === index ? '▲' : '▼'}</span>
-                  </button>
-                  {#if activeFaq === index}
-                    <div transition:slide class="faq-answer {activeFaq === index ? 'active' : ''}">{answer}</div>
-                  {/if}
-                {/each}
+              <h2>FAQS</h2>
+              {#each faqs as {question, answer}, index}
+              <button class="faq-question {activeFaq === index ? 'active' : ''}" on:click={() => activeFaq = activeFaq === index ? null : index}>
+                {question}
+                <img src="arrow.svg" alt="Arrow" class="arrow {activeFaq === index ? 'active' : ''}" />
+              </button>
+              {#if activeFaq === index}
+                <div transition:slide class="faq-answer {activeFaq === index ? 'active' : ''}">{answer}</div>
+              {/if}
+            {/each}
+            
               </aside>
         </div>
     </section>
@@ -130,6 +134,7 @@
     border: none;
     text-align: left;
     width: 100%;
+    justify-content: space-between; 
     padding: 0.5em 0;
     color: inherit;
     display: block;
@@ -141,9 +146,12 @@
 }
 
 .arrow {
-    position: absolute;
-    right: 0;
-    transition: transform 0.5s ease;
+  height: 16px;
+  width: 16px;
+  vertical-align: middle;
+  position: absolute;
+  right: 10px;
+  transition: transform 0.5s ease;
 }
 .faq-question.active .arrow {
     transform: rotate(180deg);
@@ -183,37 +191,57 @@
         margin-left: 5rem;
     }
 }
-.canister-interact h2 {
-    margin-top: 2rem;
-}
-.canister-interact form {
-    margin-top: 1rem;
-}
-.canister-interact input, .canister-interact button {
-    line-height: 1;
-    height: auto;
-    width: auto;
-    font-size: 1rem;
-    color: white;
-    padding: 0.5em 1em;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-    border: none;
-    background-color: purple;
-}
-
-.canister-interact input {
-    margin-right: 0.5rem;
-    background-color: transparent;
-    border: 1px solid white;
-}
-
-.canister-interact button:hover {
-    background-color: #570271;
-}
-
 .greeting-response {
     margin-top: 1rem;
     color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+form {
+  display: flex;
+  justify-content: flex-start;;
+  gap: 0.2em;
+  flex-flow: row wrap;
+  max-width: 40vw;
+  margin: auto;
+  margin-top: 1rem;
+  align-items: center;
+}
+input[id="name"]{
+  line-height: 1;
+  height: auto;
+  width: auto;
+  font-size: 1rem;
+  margin-right: 5px;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  border: none;
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+button[type="submit"] {
+  padding: 5px 20px;
+  margin: 10px auto;
+  margin-left: 0;
+  float: right;
+  line-height: 1;
+  height: auto;
+  width: auto;
+  font-size: 1rem;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+  border: none;
+  background-color: purple;
+}
+button[type="submit"]:hover  {
+    background-color: #570271;
 }
 </style>
