@@ -1,47 +1,56 @@
 <script>
-  import { onMount } from 'svelte';
   import Loading from '../lib/loading.svelte';
   import { navigating } from '$app/stores';
-  let isMenuOpen = false;
-
-  function toggleMenu() {
-    isMenuOpen = !isMenuOpen;
+  
+  function showSidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'flex';
   }
-  function closeMenu() {
-    isMenuOpen = false;
+  function hideSidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'none';
   }
-  onMount(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest('nav') && isMenuOpen) {
-        isMenuOpen = false;
-      }
-    };
-    document.addEventListener('click', handleClickOutside);
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
-  });
 </script>
-  <nav>
-    <a href="/" class="nav-logo" title="Back to Homepage">
-      <img src="/icplogo.svg" alt="ICP Logo" style="height: 16px; vertical-align: middle;" />
+<nav>
+  <ul class="sidebar">
+    <li on:click={hideSidebar}><a href="#" class="nav-logo" title="close menu">
+      <img src="/close.svg" alt="close" style="height: 24px; vertical-align: middle;" />
+    </a></li>
+    <li><a href="/about">
+    <img src="/about.svg" alt="about logo" style="height: 36px; vertical-align: middle;" />
+    About
+    </a></li>
+    <li><a href="/projects">
+    <img src="/project.svg" alt="project" style="height: 36px; vertical-align: middle;" /> 
+    Projects</a></li>
+    <li><a href="/contact">
+      <img src="/contact.svg" alt="contact" style="height: 36px; vertical-align: middle;" />
+    Contact</a></li>
+  </ul>
+  <ul>
+    <li><a href="/" class="nav-logo" title="Back to Homepage">
+      <img src="/icplogo.svg" alt="ICP Logo" style="height: 24px; vertical-align: middle;" />
       Home
-    </a>
-    <button aria-label="Toggle Menu" on:click={toggleMenu}>
-      <span class="line"></span>
-      <span class="line"></span>
-    </button>
-    <ul class="{isMenuOpen ? 'menu-open' : ''}">
-      <li class="link"><a href="/about" on:click={closeMenu}>About</a></li>
-      <li class="link"><a href="/projects" on:click={closeMenu}>Projects</a></li>
-      <li class="link"><a href="/contact" on:click={closeMenu}>Contact</a></li>
-    </ul>
-  </nav>
+    </a></li>
+    <li class="hideOnMobile"><a href="/about">
+    <img src="/about.svg" alt="about" style="height: 36px; vertical-align: middle;" />
+    About
+    </a></li>
+    <li class="hideOnMobile"><a href="/projects">
+    <img src="/project.svg" alt="project" style="height: 36px; vertical-align: middle;" /> 
+    Projects</a></li>
+    <li class="hideOnMobile"><a href="/contact">
+      <img src="/contact.svg" alt="contact" style="height: 36px; vertical-align: middle;" />
+    Contact</a></li>
+    <li class="menu-button" on:click={showSidebar}><a href="/"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>" </li>
+  </ul>
+</nav>
+  
 
   {#if $navigating}
   <Loading></Loading>
   {:else}
-  <div class="container" class:blur={isMenuOpen}>
+  <div class="container">
     <slot></slot>
   </div>
 {/if}
@@ -68,115 +77,57 @@
   font-family: sans-serif;
   }
   nav {
-  width: 100%;
-  margin-bottom: 10px;
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 3em;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
+  background-color: rgba(118, 20, 118, 0);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
   }
-  .blur{
-    filter: blur(5px);
-  }
-  .nav-logo, nav ul li a {
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 5px; 
-  border-radius: 5px;
-  }
-  .nav-logo:hover, nav ul li a:hover {
-  background-color: purple;
-  color: white;
-  }
-  nav ul li, .nav-logo {
-  display: inline-block; 
-  }
-  
-  nav ul {
-  display: flex;
-  gap: 2em;
-  list-style: none;
-  z-index: 100;
-  }
-  nav ul li {
-  opacity: .8;
-  cursor: pointer;
-  }
-  nav ul li:hover {
-  opacity: 1;
-  }
-  nav button {
-  position: relative;
-  width: 25px;
-  height: 25px;
-  background: transparent;
-  outline: none;
-  border: none;
-  }
-  nav button span {
-  width: 100%;
-  height: 5px;
-  background: white;
-  position: absolute;
-  border-radius: 1em;
-  transition: .3s;
-  }
-  nav button span:nth-of-type(1) {
-  top: 0;
-  left: 0;
-  box-shadow: 0px 10px 0 white;
-  }
-  nav button span:nth-of-type(2) {
-  bottom: 0;
-  left: 0;
-  }
-.menu-open {
-  transform: translateX(0%);
-}
-.blur {
-  filter: blur(5px);
-}
-.container.blur {
-  filter: blur(5px);
-  pointer-events: none;
-}
-  @media (min-width: 768px) {
-  nav button {
-    display: none;
-    }
-  }
-  @media (max-width: 768px) {
-  nav ul {
-    position: absolute;
-    top: 70px;
-    right: 0;
+  nav ul{
     width: 100%;
-    height: calc(100vh - 70px);
-    background: transparent;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  nav li{
+    height: 50px;
+  }
+  nav a{
+    height: 100%;
+    padding: 0 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+  nav a:hover{
+    background-color: blueviolet;
+  }
+  nav li:first-child{
+    margin-right: auto;
+  }
+  .sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    backdrop-filter: blur(10px);
+    background-color: rgba(126, 13, 126, 0.3);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
     flex-direction: column;
-    align-items: flex-end;
-    padding: 2em 5em;
-    transform: translateX(100%);
-    transition: .3s;
-    }
-  
-  
-  nav button:focus ~ ul {
-    transform: translateX(0%);
-    }
-  nav button:focus span {
-    box-shadow: none;
-    transform: rotate(40deg) translateY(13px);
-    }
-  
-  nav button:focus span:nth-of-type(2) {
-    transform: rotate(-40deg) translateY(-13px);
-    }
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .menu-button{
+    display: none;
+  }
+  .sidebar li{
+    width: 100%;
+  }
+  .sidebar a{
+    width: 100%;
   }
   footer {
   position: static;
@@ -190,4 +141,18 @@
         width: 140px;
         height: auto;
   }
+  @media(max-width:768px){
+    .hideOnMobile{
+      display: none;
+    }
+    .menu-button{
+      display: block;
+    }
+  }
+  @media(max-width:400px){
+    .sidebar {
+      width: 100%;
+    }
+  }
+
 </style>
