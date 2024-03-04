@@ -4,19 +4,16 @@
       {
         name: "ChatCode",
         description: "Smart Contract programming language created using lark parser in python, leverages AI and API calls for Interpretation.",
-        imageUrl: "/thumbnail1.jpg",
         githubUrl: "https://github.com/Demali-876/ChatCode"
       },
       {
         name: "Time Capsule Network",
         description: "A decentralized app for creating digital time capsules on the blockchain.",
-        imageUrl: "/thumbnail2.jpg",
         githubUrl: "https://github.com/Demali-876/timecapsule"
       },
       {
         name: "Portfolio",
-        description: "My personal portfolio showcasing my projects and skills.You are currently view this project!",
-        imageUrl: "/thumbnail3.jpg",
+        description: "My personal portfolio created using sveltekit. You are currently view this project!",
         githubUrl: "https://github.com/Demali-876/portfolio"
       }
     ];
@@ -28,9 +25,8 @@
 <div class="container">
     <h1 class="heading">My Projects</h1>
     <div class="projects-container">
-        {#each projects as {name, description, imageUrl, githubUrl}, index}
+        {#each projects as {name, description, githubUrl}}
             <div class="project-card">
-                <img src={imageUrl} alt={`Screenshot of ${name}`} class="project-image">
                 <h3>{name}</h3>
                 <p>{description}</p>
                 <a href={githubUrl} target="_blank" class="github-link">View on GitHub</a>
@@ -47,43 +43,66 @@
 
 <style>
 .container {
-    max-width: 800px;
+    max-width: 1800px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    
     text-align: center;
 }
 .heading {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 50px;
     padding: 20px;
+    align-items: center;
+
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
     background-color: transparent;
     border-radius: 8px;
+    align-items: center;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
+    --g: 4px;
+    --b: 12px;
+    --c: purple;
+  
+  
+    padding: calc(var(--g) + var(--b));
+    --_c: #0000 0 25%, var(--c) 0 50%;
+    --_g1: repeating-linear-gradient(90deg ,var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg,var(--_c)) repeat-y;
+    background:
+        var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+        var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% var(--b),var(--b) 200%;
+    cursor: pointer;
+    filter: grayscale(50%);
+    transition: .3s;
+    }
 
 .project-card:hover {
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.project-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(174, 1, 174, 0.7);
+    --_p: 75%;
+    filter: grayscale(0%); 
 }
 
 .github-link {
     display: block;
-    background-color: #007bff;
+    align-self:center;
+    background-color: purple;
     color: white;
+    width: 150px;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
@@ -97,6 +116,8 @@
 .github-profile {
     text-align: center;
     margin-top: 40px;
+    margin-bottom: 10px;
+    border-radius: 8px;
 }
 
 .github-profile a {
@@ -111,21 +132,19 @@
     vertical-align: middle;
 }
 @media (max-width: 600px) {
-    .projects-container {
-        grid-template-columns: 1fr;
-        margin-left: 5rem;
-    }
+    
     .heading {
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-left: 5rem;
+    
     }
     .project-card {
-        width: 100%;
+        width: 90%;
+        margin-left: 0%;
         border-radius: 8px;
         padding: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        box-shadow: 0 2px 4px rgba(174, 1, 174, 1);
     }
 }
 </style>

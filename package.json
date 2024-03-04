@@ -14,5 +14,12 @@
   "type": "module",
   "workspaces": [
     "src/portfolio_frontend"
-  ]
+  ],
+  "devDependencies": {
+    "sass": "^1.71.1",
+    "svelte-preprocess": "^5.1.3"
+  },
+  "dependencies": {
+    "css-doodle": "^0.38.4"
+  }
 }

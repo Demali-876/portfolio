@@ -13,7 +13,8 @@
   "dependencies": {
     "@dfinity/agent": "^0.20.0",
     "@dfinity/candid": "^0.20.0",
-    "@dfinity/principal": "^0.20.0"
+    "@dfinity/principal": "^0.20.0",
+    "css-doodle": "^0.38.4"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^2.0.0",

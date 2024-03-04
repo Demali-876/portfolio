@@ -1,6 +1,6 @@
 <!-- src/routes/about.svelte -->
 <script>
-  import { slide, fade, fly } from 'svelte/transition';
+  import { slide, fly } from 'svelte/transition';
   let faqs = [
     {
       question: "What is Blockchain Technology?",
@@ -27,7 +27,7 @@
       answer: "Motoko is a programming language designed specifically for the Internet Computer, offering a seamless development experience for building scalable, secure blockchain applications. SvelteKit, as a frontend framework, complements Motoko by enabling fast, reactive user interfaces. This combination ensures efficient, user-friendly applications built on a robust blockchain foundation."
     },
     {
-      question: "How can Businesses and Individuals Get Started with Blockchain Solutions?",
+      question: "Getting Started with Blockchain Solutions?",
       answer: "To get started, reach out for a consultation. We'll discuss your needs, the potential blockchain can bring to your project, and how our services can help you achieve your goals. From ideation to launch, we guide you through every step, ensuring a smooth journey into the world of blockchain technology."
     }
   ];
@@ -53,7 +53,6 @@
 </svelte:head>
 
 <div class="main_container">
-    <section>
         <div class="inner-container">
             <div class="about-content">
               <h2 class="about-title">Hi, I'm Demali</h2>
@@ -70,7 +69,7 @@
                     The future is ON-CHAIN! Let's Build!
                   </p>
               </div>
-              <h2>Interact with a Canister</h2>
+              <h2 class="interact-title">Interact with a Canister</h2>
               <form action="#" on:submit|preventDefault={onSubmit}>
                 <input id="name" alt="Name" type="text" placeholder="Enter your Name"/>
                 <button type="submit">Submit</button>
@@ -80,11 +79,11 @@
               {/if}
           </div>
             <aside class="faq-container">
-              <h2>FAQS</h2>
+              <h2 class="faqs-title">FAQS</h2>
               {#each faqs as {question, answer}, index}
               <button class="faq-question {activeFaq === index ? 'active' : ''}" on:click={() => activeFaq = activeFaq === index ? null : index}>
                 {question}
-                <img src="arrow.svg" alt="Arrow" class="arrow {activeFaq === index ? 'active' : ''}" />
+                <img src="/arrow.svg" alt="Arrow" class="arrow {activeFaq === index ? 'active' : ''}" />
               </button>
               {#if activeFaq === index}
                 <div transition:slide class="faq-answer {activeFaq === index ? 'active' : ''}">{answer}</div>
@@ -93,12 +92,12 @@
             
               </aside>
         </div>
-    </section>
 </div>
 
 <style>
     .main_container {
-        margin: 0 80px 0 60px;
+        margin: 0 20px 0 20px;
+        align-self: center;
     }
     .about-title {
         font-size: 2.2rem;
@@ -113,10 +112,12 @@
         font-weight: normal;
         font-size: 1rem;
         line-height: 2rem;
+        
     }
     .inner-container {
     display: flex;
     justify-content: space-between;
+    align-self: center;
 }
 .about-content, .faq-container {
     flex: 1;
@@ -177,18 +178,23 @@
         margin: 0;
     }
     .about-title{
-      margin-left: 5rem;
+     margin-left: 50px;
+     margin-right: 50px;
     }
     .faq-container{
-      margin-left: 2.5rem;
+      align-content: center;
     }
     .main_container, .about-subtitle > p {
         margin: 0 20px;
+        align-content: center;
     }
 
     .about-subtitle > p {
         width: auto;
-        margin-left: 5rem;
+        margin-left: 2rem;
+    }
+    .interact-title, .faqs-title{
+      text-align: center;
     }
 }
 .greeting-response {
@@ -204,15 +210,16 @@ form {
   display: flex;
   justify-content: flex-start;;
   gap: 0.2em;
-  flex-flow: row wrap;
   max-width: 40vw;
-  margin: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+
   margin-top: 1rem;
   align-items: center;
 }
 input[id="name"]{
   line-height: 1;
-  height: auto;
+  height: 20px;
   width: auto;
   font-size: 1rem;
   margin-right: 5px;
@@ -229,9 +236,8 @@ button[type="submit"] {
   padding: 5px 20px;
   margin: 10px auto;
   margin-left: 0;
-  float: right;
   line-height: 1;
-  height: auto;
+  height: 36px;
   width: auto;
   font-size: 1rem;
   color: white;

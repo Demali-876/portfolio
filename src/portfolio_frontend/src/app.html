@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+	
 	<head>
         %sveltekit.head%
 		<meta charset="utf-8" />
@@ -9,12 +10,8 @@
 	</head>
 	<body>
 		<div id="svelte">%sveltekit.body%</div>
-        <footer>
-            <a href="https://internetcomputer.org" target="_blank">
-                <img src="/logo2.svg" alt="Logo" id="footer-logo">
-            </a>
-        </footer>
 	</body>
+    
 </html>
 
 <style>
@@ -26,14 +23,9 @@
         flex-direction: column;
         padding: 0;
         font-family: "Inter", sans-serif;
-        background-image: url('/ffflurry.svg');
-        background-size: cover;
+		background-image: url('/ffflurry.svg');
         
 	}
-	* {
-	box-sizing: border-box;
-	}
-
 	a {
 	text-decoration: none;
     color: white;
@@ -41,92 +33,4 @@
 	:root{
 		--background: transparent;
 	}
-	nav {
-        position: relative;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 80px;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-    @media (max-width: 768px) {
-        nav {
-          margin: 0 20px;
-        }
-    }
-    @media (max-width: 390px) {
-       nav {
-          margin: 0 10px; 
-        }
-    }
-    @media (max-width: 390px) {
-        .nav-logo, .nav-links .link {
-          padding: 0.5em;
-          font-size: 0.75rem;
-        }
-      }
-
-    nav .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .nav-links {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin: -1em 0;
-        flex: 1 0 auto;
-    }
-
-    .nav-links .link {
-        position: relative;
-        height: auto;
-        width: auto;
-        margin: 1em;
-        align-content: center;
-        font-size: 1rem;
-        letter-spacing: 1px;
-        color: white;
-        padding: 0.5em 1em;
-        border-radius: 10px;
-        transition: background-color 0.3s;
-    }
-    .nav-links .link:hover {
-        background-color: purple;
-        color: white;
-    }
-
-    .nav-logo {
-        position: relative;
-        line-height: 1;
-        height: auto;
-        width: auto;
-        font-size: 1rem;
-        color: white;
-        padding: 0.5em 1em;
-        border-radius: 10px;
-        transition: background-color 0.3s;
-    }
-    .nav-logo:hover{
-        background-color: purple;
-        color: white;
-    }
-    footer {
-        position: relative;
-        left: 0;
-        right: 0;
-        bottom: 1px;
-        text-align: center;
-        padding: 10px 0;
-        background: transparent;
-        width: 100%;
-    }
-
-    #footer-logo {
-        width: 140px;
-        height: auto;
-    }
 </style>
