@@ -55,7 +55,7 @@
 <div class="main_container">
         <div class="inner-container">
             <div class="about-content">
-              <h2 class="about-title">Hi, I'm Demali</h2>
+              <h2 class="about-title">Hi, I'm Demali.</h2>
               <div class="about-subtitle">
                   <p>
                     I am a blockchain solutions architect with a background in computer science,
