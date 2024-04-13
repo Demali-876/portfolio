@@ -108,7 +108,8 @@
           <nav>
             <ul class="display-flex gap-2 justify-content-center">
               {#each Object.keys(contentMap) as tab}
-              <li class="fw-100 " >
+              <li class="fw-50 " >
+                <!-- svelte-ignore a11y-invalid-attribute -->
                 <a href="javascript:void(0);" class="destination clr-light uppercase {activeTab === tab ? 'active-destination' : ''}"
                   on:click={() => selectTab(tab)}>
                   {tab}
