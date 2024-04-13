@@ -1,169 +1,153 @@
 <script>
-  import Loading from '../lib/loading.svelte';
-  import { navigating } from '$app/stores';
-  
-  function showSidebar(){
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.style.display = 'flex';
-  }
-  function hideSidebar(){
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.style.display = 'none';
-    if (e) {
-      e.stopPropagation();
-    }
+  import { writable } from 'svelte/store';
+
+  const isVisible = writable(false);  // Using a Svelte store to handle visibility
+
+  function toggleMenu() {
+    isVisible.update(n => !n);  // Toggle the visibility state
   }
 </script>
-<nav>
-  <ul class="sidebar">
-    <li on:click={hideSidebar}><a class="nav-logo" title="close menu">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="cyan" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-    </a></li>
-    <li ><a href="/about">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="cyan" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>    
-      About
-    </a></li>
-    <li><a href="/projects">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="cyan" height="24" viewBox="0 -960 960 960" width="24"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/></svg>    
-      Projects</a></li>
-    <li><a href="/contact">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="cyan" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-400q33 0 56.5-23.5T560-480q0-33-23.5-56.5T480-560q-33 0-56.5 23.5T400-480q0 33 23.5 56.5T480-400ZM320-240h320v-23q0-24-13-44t-36-30q-26-11-53.5-17t-57.5-6q-30 0-57.5 6T369-337q-23 10-36 30t-13 44v23ZM720-80H240q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80Zm0-80v-446L526-800H240v640h480Zm-480 0v-640 640Z"/></svg>    
-      Contact</a></li>
-  </ul>
-  <ul>
-    <li><a href="/" class="nav-logo" title="Back to Homepage">
-      <img src="/icplogo.svg" alt="ICP Logo" style="height: 24px; vertical-align: middle;" />
-      Home
-    </a></li>
-    <li class="hideOnMobile"><a href="/about">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="cyan" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Zm80-80h480v-32q0-11-5.5-20T700-306q-54-27-109-40.5T480-360q-56 0-111 13.5T260-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T560-640q0-33-23.5-56.5T480-720q-33 0-56.5 23.5T400-640q0 33 23.5 56.5T480-560Zm0-80Zm0 400Z"/></svg>    
-    About
-    </a></li>
-    <li class="hideOnMobile"><a href="/projects">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="cyan" height="24" viewBox="0 -960 960 960" width="24"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h240l80 80h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Z"/></svg> 
-    Projects</a></li>
-    <li class="hideOnMobile"><a href="/contact">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="cyan" height="24" viewBox="0 -960 960 960" width="24"><path d="M480-400q33 0 56.5-23.5T560-480q0-33-23.5-56.5T480-560q-33 0-56.5 23.5T400-480q0 33 23.5 56.5T480-400ZM320-240h320v-23q0-24-13-44t-36-30q-26-11-53.5-17t-57.5-6q-30 0-57.5 6T369-337q-23 10-36 30t-13 44v23ZM720-80H240q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80Zm0-80v-446L526-800H240v640h480Zm-480 0v-640 640Z"/></svg>
-    Contact</a></li>
-    <li class="menu-button" on:click={showSidebar}><a><svg xmlns="http://www.w3.org/2000/svg" fill="cyan" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>" </li>
-  </ul>
-</nav>
-  
 
-  {#if $navigating}
-  <Loading></Loading>
-  {:else}
-  <div class="container">
-    <slot></slot>
+<svelte:head>
+  <script src="src/lib/nav.js" defer></script>
+</svelte:head>
+<header class="primary-header flex">
+  <div>
+    <a href="#home"><img src="/icp-logo.svg" alt="IcpLogo" style="height: 36px;" class="logo"></a>
   </div>
-{/if}
-  <footer>
-        <a href="https://internetcomputer.org" target="_blank">
-            <img src="/logo2.svg" alt="Logo" id="footer-logo">
+  <button class="mobile-nav-toggle" on:click={toggleMenu} 
+          aria-expanded={$isVisible}></button>
+  <nav>
+    <ul id="primary-navigation" class="primary-navigation flex"
+        class:visible={$isVisible}>
+      <li class="active">
+        <a href="#home">
+          <span aria-hidden="true">00</span>Home
         </a>
-  </footer>
-  <style>
-  
-  .container {
-  max-width: 1400px;
-  flex: 1 0 auto;
-  margin: 50px auto;
-  background-color: rgba(0, 0, 0, 0); 
-  color: #fff;
-  align-items: center;
-  justify-content: center;
-  }
-  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-  }
-  nav {
-  background-color: rgba(118, 20, 118, 0);
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-  }
-  nav ul{
-    width: 100%;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-  nav li{
-    height: 50px;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  nav a{
-    height: 100%;
-    padding: 0 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: white;
-    transition: background-color 0.5s ease;
-  }
-  nav a:hover{
-    background-color: blueviolet;
-    
-  }
-  nav li:first-child{
-    margin-right: auto;
-  }
-  .sidebar{
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 250px;
-    z-index: 999;
+      </li>
+      <li>
+        <a href="#about">
+          <span aria-hidden="true">01</span>About
+        </a>
+      </li>
+      <li>
+        <a href="#blockchain">
+          <span aria-hidden="true">02</span>Blockchain
+        </a>
+      </li>
+      <li>
+        <a href="#links">
+          <span aria-hidden="true">03</span>Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<slot/>
 
-    backdrop-filter: blur(10px);
-    background-color: rgba(126, 13, 126, 0.3);
-    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+<style>
+
+  .flex{
+    display: flex;
+    gap: var(--gap,1rem);
+  }
+  .logo{
+    margin: 2rem;
+  }
+  .primary-header{
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mobile-nav-toggle{
     display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
   }
-  .menu-button{
-    display: none;
+  .primary-navigation{
+    list-style: none;
+    padding: 2rem 2rem 2rem 2rem;
+    margin : 0;
+    z-index: 1000;
+    background: hsl(0 0% 0% 0.5);
   }
-  .sidebar li{
-    align-self: center;
+  @supports(backdrop-filter: blur(1rem)){
+    .primary-navigation{
+    background: hsl(0 0% 100% /0.05);
+    backdrop-filter: blur(1.5rem);
+    }
+    .primary-navigation a{
+      -webkit-text-fill-color: transparent; 
+    }
   }
-  .sidebar li:first-child{
-    margin-left: 80%;
-  }
-  .sidebar a{
-    width: 100%;
-  }
-  footer {
-  position: static;
-  text-align: center;
-  padding: 10px 0;
-  background: transparent;
-  width: 100%;
-  margin-top: auto;
-  }
+  .primary-navigation a {
+  --b: 0.1em;  
+  --c: #1095c1; 
   
-  #footer-logo {
-        width: 140px;
-        height: auto;
+  color: #ffff;
+  padding-block: var(--b);
+  background: 
+    linear-gradient(var(--c) 50%, #fff 0) 0% calc(100% - var(--_p, 0%))/100% 200%,
+    linear-gradient(var(--c) 0 0) 0% var(--_p, 0%)/var(--_p, 0%) var(--b) no-repeat;
+  -webkit-background-clip: text, padding-box;
+          background-clip: text, padding-box;
+  transition: .3s var(--_s, 0s) linear, background-size .3s calc(.3s - var(--_s, 0s));
   }
-  @media(max-width:768px){
-    .hideOnMobile{
-      display: none;
+.primary-navigation a:hover {
+  --_p: 100%;
+  --_s: .3s;
+}
+
+  .primary-navigation a >[aria-hidden ="true"]{
+    font-weight: 700;
+    margin-inline-end: 0.75rem;
+  }
+  @media (min-width:35em) and (max-width:55em){
+    .primary-navigation a> span[aria-hidden="true"]{
+        display: none;
     }
-    .menu-button{
+  }
+  @media (min-width:35em){
+    .primary-navigation{
+        --gap: clamp(1rem,5vw,2rem);
+        padding-block: 1rem;
+        padding-inline: clamp(2rem,6vw,6rem);
+    }
+
+  }
+
+  @media(max-width: 35em){
+    .primary-navigation {
+      z-index: 1000;
+      --gap : 2em;
+      position: fixed;
+      inset: 0 0 0 30%;
+      flex-direction: column;
+      padding: min(30vh,10rem) 2em;
+      border-radius: 0px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .primary-navigation[data-visible="false"] {
+    transform: translateX(0%);
+    }
+  
+    .mobile-nav-toggle{
       display: block;
-    }
+    position: fixed;
+    z-index: 9999;
+    background: url(/hamburger.svg) no-repeat; 
+    width: 2rem;
+    height: 2rem; 
+    border: none; 
+    top: 2rem;
+    right: 2rem;
   }
-  @media(max-width:400px){
-    .sidebar {
-      width: 100%;
-    }
+  .mobile-nav-toggle[aria-expanded="true"]{
+    background: url(/close3.svg);
+    background-repeat: no-repeat;
+    width: 2rem;
+    aspect-ratio: 1;
   }
+  .visible {
+    transform: translateX(0%);
+  }
+}
 </style>
