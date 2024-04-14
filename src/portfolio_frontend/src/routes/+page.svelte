@@ -83,10 +83,8 @@
     });
   }
 </script>
-
-   
-    
   <div class="display-grid gap-2 margin-btm-3">
+    
     <main class="lh-100 margin-top-4 margin-left">
       <h1 class="uppercase fw-100 fs-500 margin-block-index clr-light">So, Blockchain is the new<br><span class="bold ff-serif">Cloud</span></h1>
       <p class="text-width main-p fw-100 clr-light">It's not a dream; it’s a reality unfolding powered by the Internet Computer Protocol. Hi! I'm Demali, a blockchain solution architect. I am an innovator, adaptor, and an avid advocate of blockchain technology. Welcome to my and now our shared exploration of this new frontier, which is not just a concept but a recognition of the eventuality for blockchain to transform every facet of existing systems, services, and the very fabric of current society</p>
@@ -102,7 +100,8 @@
       </h1>
       <div class="display-grid gap-desktop margin-top-4 margin-btm-3">
         <div class="img-part display-flex align-items-center justify-content-center">
-          <img src="astronaut.webp" alt="moon image" class="destination-img mobile-img-width">
+          <!-- svelte-ignore a11y-missing-attribute -->
+          <img src="astronaut.webp" class="destination-img mobile-img-width">
         </div>
         <div class="text-part">
           <nav>
@@ -120,7 +119,7 @@
           </nav>
           <h2 class="destination-place margin-btm-1 margin-top-3 ff-serif fs-800 fw-100 uppercase">Visionary</h2>
           <p class="btm-line description main-p fw-100 clr-light text-width">
-            Internet Computer Astronaut, builder of the digital future. With a solid computer science background, I specialize in crafting decentralized applications on the Internet Computer Protocol. My focus is on transforming businesses by leveraging blockchain to reduce costs, enhance data integrity, and foster innovation.
+            Internet Computer Astronaut, builder of the digital future. With a solid computer science background, I specialize in crafting decentralized applications on the Internet Computer Protocol. My focus is on transforming businesses by leveraging blockchain to enhance data integrity, and foster innovation.
           </p>
           <div class="justify-content-center display-flex"><div class="destination-underline"></div></div>
           <div class="numbers-info justify-content-center display-flex gap-2">
@@ -130,7 +129,7 @@
             </div>
             <div>
               <p class="uppercase numbers-heading fw-100">{contentMap[activeTab].phrase2}</p>
-              <p class="uppercase numbers-value ff-serif travel">Dev/PM</p>
+              <p class="uppercase numbers-value ff-serif travel">Developer</p>
             </div>
           </div>
         </div>

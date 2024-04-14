@@ -48,7 +48,25 @@ img {
     display: block;
     max-width: 100%;
 }
+@keyframes waveAnimation {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(3.75deg);
+    }
+    50% {
+        transform: rotate(-7.5deg);
+    }
+    75% {
+        transform: rotate(7.5deg);
+    }
+}
 
+.destination-img {
+    display: block;
+    animation: waveAnimation 12s linear infinite;
+}
 button {
     cursor: pointer;
     font-family: var(--ff-serif);
