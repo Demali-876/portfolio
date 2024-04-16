@@ -521,7 +521,6 @@ main {
         justify-self: end;
     }
 }
-
 @media only screen and (max-width: 576px) { 
      
     /* mobile navigation styling */ 

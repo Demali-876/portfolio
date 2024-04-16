@@ -220,7 +220,6 @@
                       </div>
                     </div>
                     <div class="link_end"></div>
-             
                 </div>
               </div>
               <div class="container_link">
@@ -238,14 +237,40 @@
                     <div class="link_end"></div>
                   </a>
                 </div>
-              </div>
-                    <div class="link_end"></div>
                 </div>
               </div>
             </div>
+            <div class="container_link">
+              <div class="link_outer">
+                <a href="https://github.com/Demali-876/portfolio/tree/master" target="_blank" rel="noopener noreferrer" class="link link_circle link_circle_shadow" style="background-color: #321033;">
+                  <div class="link_icon">
+                    <!-- svelte-ignore a11y-missing-attribute -->
+                    <img class="link_image" src="svelte.svg">
+                  </div>
+                  <div class="link_outer_text">
+                    <div class="text text_center ">
+                      <strong class="main-p fw-100 clr-light text-width">Sveltekit</strong>
+                    </div>
+                  </div>
+                  <div class="link_end"></div>
+              </div>
+            </div>
+            <div class="container_link">
+              <div class="link_outer">
+                <a href="https://github.com/Demali-876/portfolio/tree/master" target="_blank" rel="noopener noreferrer" class="link link_circle link_circle_shadow" style="background-color: #321033;">
+                  <div class="link_icon">
+                    <!-- svelte-ignore a11y-missing-attribute -->
+                    <img class="link_image" src="icp-logo.svg">
+                  </div>
+                  <div class="link_outer_text">
+                    <div class="text text_center ">
+                      <strong class=" fw-100 clr-light">Internet Computer</strong>
+                    </div>
+                  </div>
+                  <div class="link_end"></div>
+              </div>
+          
+            </div>
+            <p class="fw-100 clr-ligh main-p margin-top-3 margin-btm-3"t>This website was built using <strong>SvelteKit</strong> and is hosted 100% on-chain on the <strong>Internet Computer Protocol</strong>.</p>
       </section>
-      <section id="footer">
-        <div>
-          <a href="https://internetcomputer.org/"><img src="logo2.svg" alt="footer"></a>
-        </div>
-      </section>
+      
