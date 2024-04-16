@@ -1,5 +1,6 @@
 <script>
   import "../style.css";
+  import { fade, fly } from 'svelte/transition';
   import { onMount } from 'svelte';
   import { setupDestinations, setupCrew, setupTechnologies, contentMap } from '../lib/functions.js';
 
@@ -21,12 +22,18 @@
 <div class="display-grid gap-2 margin-btm-3" id="home">
   <main class="lh-100 margin-top-4 margin-left">
     <h1 class="uppercase fw-100 fs-500 margin-block-index clr-light">So, Blockchain is the new<br><span class="bold ff-serif">Cloud</span></h1>
-    <p class="text-width main-p fw-100 clr-light">It's not a dream; it’s a reality unfolding powered by the Internet Computer Protocol. Hi! I'm Demali, a blockchain solution architect. Welcome to my and now our shared exploration of this new frontier, a recognition of the eventuality for blockchain to transform every facet of existing systems, services, and the very fabric of society.</p>
+    <p class="text-width main-p fw-100 clr-light">It's not a dream; it’s reality unfolding powered by the Internet Computer Protocol. Hi! I'm Demali, a blockchain solution architect. Welcome to my and now our shared exploration of this new frontier, a recognition of the eventuality for blockchain to transform every facet of existing systems, services, and the very fabric of society.</p>
   </main>
   <div>
     <a href="#start" class="explore-btn ff-serif uppercase">Explore</a>
   </div>
  </div>
+<div class="social">
+  <a href="#whoami" class="social_link social_link_circle" style="background-color:#321033;">
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <img class="social_icon" src="arrow.svg">
+  </a>
+</div>
  <main id="whoami">
   <h1 class="uppercase fw-100 fs-500 margin-btm-3 h1-margin-left margin-top-3">
     <span class="clr-light">01 </span>DFX identity whoami
@@ -52,7 +59,7 @@
       </nav>
       <h2 class="destination-place margin-btm-1 margin-top-3 ff-serif fs-800 fw-100 uppercase">Explorer</h2>
       <p class="btm-line description main-p fw-100 clr-light text-width">
-        Internet Computer Astronaut, builder of the digital future. With a solid computer science background, I specialize in crafting decentralized applications on the Internet Computer Protocol. My focus is on transforming businesses by leveraging blockchain to enhance data integrity, and foster innovation.
+        Internet Computer Astronaut, builder of the digital future. With a solid computer science background, I specialize in crafting decentralized applications on the Internet Computer Protocol. My focus? Transforming operations by leveraging blockchain to enhance data integrity and fostering innovation.
       </p>
       <div class="justify-content-center display-flex"><div class="destination-underline"></div></div>
       <div class="numbers-info justify-content-center display-flex gap-2">
@@ -66,6 +73,12 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="social">
+    <a href="#start" class="social_link social_link_circle" style="background-color:#321033;">
+      <!-- svelte-ignore a11y-missing-attribute -->
+      <img class="social_icon" src="arrow.svg">
+    </a>
   </div>
 </main>
 <main id = "start">
@@ -88,13 +101,20 @@
           </div>
       </div>
   </div>
+  <div class="social">
+    <a href="#deploy" class="social_link social_link_circle" style="background-color:#321033;">
+      <!-- svelte-ignore a11y-missing-attribute -->
+      <img class="social_icon" src="arrow.svg">
+    </a>
+  </div>
 </main>
 <main id="deploy">
   <h1 class="uppercase fw-100 fs-500 margin-btm-3 h1-margin-left margin-top-3"><span class="clr-light">03</span> dfx deploy</h1>
   <div class="tech display-grid gap-2 margin-top-4 margin-left margin-btm-3">
     <picture class="img-part">
-      <source srcset="astro.svg" alt="launch vehicle" class="technology-img-desktop" media="(min-width: 768px)"> 
-      <img src="astro.png" alt="launch vehicle" class="technology-img"> 
+      <source srcset="astro.svg" class="technology-img-desktop" media="(min-width: 768px)"> 
+      <!-- svelte-ignore a11y-missing-attribute -->
+      <img src="astro.svg"  class="technology-img"> 
     </picture>
     <div class="text-part grid-reverse">
       <div class="display-flex-tech display-flex">
@@ -116,6 +136,12 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="social">
+    <a href="#linktree" class="social_link social_link_circle" style="background-color:#321033;">
+      <!-- svelte-ignore a11y-missing-attribute -->
+      <img class="social_icon" src="arrow.svg">
+    </a>
   </div>
 </main>
 <section class="main" id="linktree">
@@ -220,6 +246,12 @@
             </div>
             <div class="link_end"></div>
         </div>
+      </div>
+      <div class="social">
+        <a href="#home" class="social_link social_link_circle" style="background-color:#321033;">
+          <!-- svelte-ignore a11y-missing-attribute -->
+          <img class="social_icon inverted" src="arrow.svg">
+        </a>
       </div>
     <div>
       <p class="fw-100 clr-ligh text_center margin-top-3 margin-btm-2">100% on-chain</p>

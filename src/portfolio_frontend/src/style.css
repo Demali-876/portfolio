@@ -112,7 +112,9 @@ button {
 li {
     list-style-type: none;
 }
-
+.inverted {
+    transform: rotate(180deg);
+}
 
 /* utility classes */
 
@@ -454,7 +456,7 @@ main {
     /* home page */
 
     .explore-btn {
-        margin-top: 12rem;
+        margin-top: 10rem;
     }
 
     .gap-desktop {
@@ -530,9 +532,7 @@ main {
         margin-top: 2rem;
     }
 
-    .flex-clmn {
-        flex-direction: column;
-    }
+    
     .fw-50{
         font-size: xx-small;
     };
@@ -808,3 +808,4 @@ main {
     overflow: visible;
     vertical-align: -0.125em;
   }
+  

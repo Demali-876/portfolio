@@ -38,25 +38,25 @@
           aria-controls="primary-navigation" aria-expanded={$isVisible}>
   </button>
   <nav>
-    <ul id="primary-navigation" class="primary-navigation flex fw-200 uppercase" class:visible={$isVisible}>
+    <ul id="primary-navigation" class="primary-navigation flex fw-200 " class:visible={$isVisible}>
       <li class="active">
         <a href="#whoami" on:click={() => handleNavLinkClick('whoami')}>
-          <span aria-hidden="true">00</span>Home
+          <span aria-hidden="true">00</span>Meet Demali
         </a>
       </li>
       <li>
         <a href="#start" on:click={() => handleNavLinkClick('start')}>
-          <span aria-hidden="true">01</span>About
+          <span aria-hidden="true">01</span>Explore IC 
         </a>
       </li>
       <li>
         <a href="#deploy" on:click={() => handleNavLinkClick('deploy')}>
-          <span aria-hidden="true">02</span>Blockchain
+          <span aria-hidden="true">02</span>Advantages
         </a>
       </li>
       <li>
         <a href="#linktree" on:click={() => handleNavLinkClick('linktree')}>
-          <span aria-hidden="true">03</span>Contact
+          <span aria-hidden="true">03</span>Connect 
         </a>
       </li>
     </ul>
@@ -98,7 +98,7 @@
   }
   .primary-navigation a {
   --b: 0.1em;  
-  --c: #726e71; 
+  --c: #935b98; 
   
   color: #ffff;
   padding-block: var(--b);

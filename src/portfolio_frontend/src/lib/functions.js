@@ -62,4 +62,11 @@ export const contentMap = {
       });
     });
   }
+  export function scrollToNextSection(currentSectionId) {
+    const currentSection = document.getElementById(currentSectionId);
+    const nextSection = currentSection.nextElementSibling;
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
   
