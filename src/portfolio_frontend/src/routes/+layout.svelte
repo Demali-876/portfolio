@@ -1,10 +1,9 @@
 <script>
   import { writable } from 'svelte/store';
 
-  const isVisible = writable(false);  // Using a Svelte store to handle visibility
-
+  const isVisible = writable(false);
   function toggleMenu() {
-    isVisible.update(n => !n);  // Toggle the visibility state
+    isVisible.update(n => !n);
   }
 </script>
 
@@ -74,7 +73,7 @@
     backdrop-filter: blur(1.5rem);
     }
     .primary-navigation a{
-      -webkit-text-fill-color: transparent; 
+      -webkit-text-fill-color: transparent;
     }
   }
   .primary-navigation a {

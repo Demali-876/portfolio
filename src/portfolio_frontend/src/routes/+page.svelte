@@ -6,8 +6,8 @@
 
   const contentMap = {
     'Architect': { phrase1: 'Tech Expertise', phrase2: 'Role Offering' },
-    'Personal': { phrase1: 'Leadership Style', phrase2: 'Tech Focus' },
-    'Diplomat': { phrase1: 'Culture Embrace', phrase2: 'Innovation Stance' },
+    'Personal': { phrase1: 'Leadership Style', phrase2: 'Engagement Style' },
+    'Diplomat': { phrase1: 'Languages', phrase2: 'Tech Focus' },
     'Vanguard': { phrase1: 'Future Vision', phrase2: 'Join In' }
   };
 
@@ -66,6 +66,7 @@
     const technologyDescription = document.querySelector(".technology-description");
     const technologyImg = document.querySelector(".technology-img");
     const technologyImgDesktop = document.querySelector(".technology-img-desktop");
+
     document.querySelectorAll(".technology-btn").forEach((technology, index) => {
       technology.addEventListener("click", () => {
         const tech = technologies[index];
@@ -73,21 +74,17 @@
         technologyDescription.textContent = tech.description;
         document.querySelector(".active-tech")?.classList.remove("active-tech");
         technology.classList.add("active-tech");
-        const mediaMatch = window.matchMedia("(min-width: 769px)");
-        if (mediaMatch.matches) {
-          technologyImgDesktop.src = tech.images.portrait;
-        } else {
-          technologyImg.src = tech.images.landscape;
-        }
+
+        technologyImg.src = tech.images.webp;
+        technologyImgDesktop.src = tech.images.webp;
       });
     });
   }
 </script>
   <div class="display-grid gap-2 margin-btm-3">
-    
     <main class="lh-100 margin-top-4 margin-left">
       <h1 class="uppercase fw-100 fs-500 margin-block-index clr-light">So, Blockchain is the new<br><span class="bold ff-serif">Cloud</span></h1>
-      <p class="text-width main-p fw-100 clr-light">It's not a dream; it’s a reality unfolding powered by the Internet Computer Protocol. Hi! I'm Demali, a blockchain solution architect. I am an innovator, adaptor, and an avid advocate of blockchain technology. Welcome to my and now our shared exploration of this new frontier, which is not just a concept but a recognition of the eventuality for blockchain to transform every facet of existing systems, services, and the very fabric of current society</p>
+      <p class="text-width main-p fw-100 clr-light">It's not a dream; it’s a reality unfolding powered by the Internet Computer Protocol. <b>Hi! I'm Demali</b>, a blockchain solution architect. Welcome to my and now our shared exploration of this new frontier, a recognition of the eventuality for blockchain to transform every facet of existing systems, services, and the very fabric of current society.</p>
     </main>
     <div>
       <a href="#about" class="explore-btn ff-serif uppercase">Explore</a>
@@ -117,7 +114,7 @@
               {/each}
             </ul>
           </nav>
-          <h2 class="destination-place margin-btm-1 margin-top-3 ff-serif fs-800 fw-100 uppercase">Visionary</h2>
+          <h2 class="destination-place margin-btm-1 margin-top-3 ff-serif fs-800 fw-100 uppercase">Explorer</h2>
           <p class="btm-line description main-p fw-100 clr-light text-width">
             Internet Computer Astronaut, builder of the digital future. With a solid computer science background, I specialize in crafting decentralized applications on the Internet Computer Protocol. My focus is on transforming businesses by leveraging blockchain to enhance data integrity, and foster innovation.
           </p>
@@ -139,7 +136,7 @@
         <h1 class="uppercase fw-100 fs-500 margin-btm-3 h1-margin-left margin-top-3"><span class="clr-light">02 </span>dfx start</h1>
         <div class="display-grid gap-2 margin-top-4 margin-left">
             <div class=" crew img-part justify-content-center display-flex">
-                <img src="canister.svg" alt="Douglas Hurley" class="member-photo mobile-img-width align-self-end">
+                <img src="icp.svg"  alt="icp" class="member-photo mobile-img-width align-self-end">
             </div>
             <div class="text-part grid-reverse display-grid-members">
                 <div class="members-btn margin-btm-3 display-flex gap-1 justify-content-center">
@@ -149,15 +146,15 @@
                     <button class="option member"></button>
                 </div>
                 <div>
-                    <p class="crew-member-role ff-serif fw-100 margin-btm-1 margin-top-4 uppercase">Commander</p>
-                    <h2 class="crew-member ff-serif margin-btm-2 fw-100 uppercase fs-600">Douglas Hurley</h2>
-                    <p class="member-bio margin-btm-3 main-p fw-100 clr-light text-width">Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.</p>
+                    <p class="crew-member-role ff-serif fw-100 margin-btm-1 margin-top-4 uppercase">What is the</p>
+                    <h2 class="crew-member ff-serif margin-btm-2 fw-100 uppercase fs-600">Internet Computer</h2>
+                    <p class="member-bio margin-btm-3 main-p fw-100 clr-light text-width">ICP is a platform that redefines blockchain technology by reconceptualizing it as a decentralized cloud computing environment. This innovation enables software to run not only securely but with high efficiency directly on the public internet, creating a serverless cloud.</p>
                 </div>
             </div>
         </div>
     </main>
     <main>
-        <h1 class="uppercase fw-100 fs-500 margin-btm-3 h1-margin-left margin-top-3"><span class="clr-light">03</span> Space launch 101</h1>
+        <h1 class="uppercase fw-100 fs-500 margin-btm-3 h1-margin-left margin-top-3"><span class="clr-light">03</span> dfx deploy</h1>
         <div class="tech display-grid gap-2 margin-top-4 margin-left margin-btm-3">
           <picture class="img-part">
             <source srcset="astro.svg" alt="launch vehicle" class="technology-img-desktop" media="(min-width: 768px)"> 
@@ -177,13 +174,78 @@
                 </div>
               </div>
               <div>
-                <p class="uppercase main-p fw-100 clr-light terminology-p">The terminology...</p>
-                <h2 class="technology-type ff-serif margin-btm-2 fw-100 uppercase fs-600">Launch vehicle</h2>
-                <p class="technology-description main-p fw-100 clr-light text-width">A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!</p>
+                <p class="uppercase main-p fw-100 clr-light terminology-p">Why build on icp...</p>
+                <h2 class="technology-type ff-serif margin-btm-2 fw-100 uppercase fs-600">Enhanced Security</h2>
+                <p class="technology-description main-p fw-100 clr-light text-width">The Internet Computer offers unmatched security by utilizing advanced cryptographic protocols, FULLY ON-CHAIN computation, and a decentralized infrastructure. This combination ensures that applications are resilient and tamper-proof, maintaining their integrity and reliability at all times.</p>
               </div>
             </div>
           </div>
         </div>
       </main>
-
-  
+      <section class="main">
+        <div class="container">
+          <div class="container_component">
+            <div class="profile">
+              <div class="profile_image"></div>
+              <div class="text text_center text_large">
+                <span class="crew-member ff-serif margin-btm-2 fw-100 uppercase fs-600">Demali</span>
+              </div>
+              <div class="text text_center">
+                <h4 class="crew-member-role ff-serif fw-100 margin-btm-1 margin-top-3 uppercase">Motoko Developer</h4>
+              </div>
+              <div class="social">
+                <a href="https://twitter.com/demali_icp" target="_blank" rel="noopener noreferrer" class="social_link social_link_circle" style="background-color:#321033;">
+                  <!-- svelte-ignore a11y-missing-attribute -->
+                  <img class="social_icon" src="x.svg">
+                </a>
+                <a href="https://discord.com/users/784929659854782524" target="_blank" rel="noopener noreferrer" class="social_link social_link_circle" style="background-color:#321033;">
+                  <!-- svelte-ignore a11y-missing-attribute -->
+                  <img class="social_icon" src="discord.svg">
+                </a>
+                <a href="mailto:demaligregg123@gmail.com" target="_blank" rel="noopener noreferrer" class="social_link social_link_circle" style="background-color:#321033;">
+                  <!-- svelte-ignore a11y-missing-attribute -->
+                  <img class="social_icon" src="gmail.svg">
+                </a>
+              </div>
+              <div class="container_link">
+                <div class="link_outer">
+                  <a href="https://github.com/Demali-876/portfolio/tree/master" target="_blank" rel="noopener noreferrer" class="link link_circle link_circle_shadow" style="background-color: #321033;">
+                    <div class="link_icon">
+                      <!-- svelte-ignore a11y-missing-attribute -->
+                      <img class="link_image" src="git.svg">
+                    </div>
+                    <div class="link_outer_text">
+                      <div class="text text_center ">
+                        <strong class="main-p fw-100 clr-light text-width">Source Code</strong>
+                      </div>
+                    </div>
+                    <div class="link_end"></div>
+             
+                </div>
+              </div>
+              <div class="container_link">
+                <div class="link_outer">
+                  <a href="https://github.com/Demali-876" target="_blank" rel="noopener noreferrer" class="link link_circle link_circle_shadow" style="background-color: #321033;">
+                    <div class="link_icon">
+                      <!-- svelte-ignore a11y-missing-attribute -->
+                      <img class="link_image" src="github.svg">
+                    </div>
+                    <div class="link_outer_text">
+                      <div class="text text_center">
+                        <strong class="main-p fw-100 clr-light text-width">My GitHub</strong>
+                      </div>
+                    </div>
+                    <div class="link_end"></div>
+                  </a>
+                </div>
+              </div>
+                    <div class="link_end"></div>
+                </div>
+              </div>
+            </div>
+      </section>
+      <section id="footer">
+        <div>
+          <a href="https://internetcomputer.org/"><img src="logo2.svg" alt="footer"></a>
+        </div>
+      </section>

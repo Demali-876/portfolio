@@ -9,12 +9,12 @@
 <div class="doodle-container">
   <css-doodle>
     <style>
-      @grid: 50x1 / 110vmax;
+      @grid: 50x1 / 46vmax;
       :container {
-        perspective: 25vmin;
+        perspective: 35vmin;
       }
       background: @m(
-        @r(200, 240), 
+        @r(20, 20), 
         radial-gradient(
           @p(#00b8a9, #f8f3d4, #f6416c, #ffde7d) 15%,
           transparent 50%
@@ -56,9 +56,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+
+    overflow: visible;
     z-index: 1;
   }
 </style>
