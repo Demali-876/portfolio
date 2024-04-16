@@ -123,8 +123,7 @@ li {
 }
 .fw-50{
     font-weight: var(--fw-50);
-    
-};
+}
 
 .fs-500 {
     font-size: var(--fs-500);
@@ -535,7 +534,7 @@ main {
     
     .fw-50{
         font-size: xx-small;
-    };
+    }
 
     .underline:hover,
     .underline:active {
@@ -651,7 +650,7 @@ main {
   }
   
   .profile_image {
-    background-image: url(ii.webp);
+    background-image: url(/ii.webp);
     width: 6rem;
     height: 6rem;
     display: flex;
@@ -711,7 +710,7 @@ main {
     filter: invert(20%) sepia(1%) saturate(55%) hue-rotate(314deg) brightness(100%);
   }
   
-  .sm\:profile_image {
+  .sm:profile_image {
     width: 7rem;
     height: 7rem;
   }
