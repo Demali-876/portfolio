@@ -22,7 +22,7 @@
 <div class="display-grid gap-2 margin-btm-3" id="home">
   <main class="lh-100 margin-top-4 margin-left">
     <h1 class="uppercase fw-100 fs-500 margin-block-index clr-light">So, Blockchain is the new<br><span class="bold ff-serif">Cloud</span></h1>
-    <p class="text-width main-p fw-100 clr-light">It's not a dream; it’s reality unfolding powered by the Internet Computer Protocol. Hi! I'm Demali, a blockchain solution architect. Welcome to my and now our shared exploration of this new frontier, a recognition of the eventuality for blockchain to transform every facet of existing systems, services, and the very fabric of society.</p>
+    <p class="text-width main-p fw-100 clr-light">It's not a dream, but reality unfolding powered by the Internet Computer Protocol. Hello! I'm Demali, a blockchain solution architect. Welcome to our shared exploration of this new frontier, a recognition of the eventuality for blockchain to transform every facet of existing systems, services, and the very fabric of society.</p>
   </main>
   <div>
     <a href="#start" class="explore-btn ff-serif uppercase">Explore</a>

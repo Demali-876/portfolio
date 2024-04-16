@@ -16,7 +16,7 @@
           "png": "astro.png",
           "webp": "astronaut.webp"
         },
-        "description": "Explore, Engage, Execute. Outside of blockchain, I'm passionate about meeting new people, exploring new cultures, and learning languages.  Humor is a big part of who I am—I enjoy a good laugh and try to bring a touch of lightness wherever I go. Nothing is more rewarding to me than transforming creative concepts into tangible realities.",
+        "description": "Explore, Engage, Execute. Outside of blockchain, I'm passionate about meeting new people, exploring new cultures, and learning languages.  Humor is a big part of who I am; I enjoy a good laugh and try to bring a touch of lightness wherever I go. Nothing is more rewarding to me than transforming creative concepts into tangible realities.",
         "distance": "Democratic",
         "travel": "Collaborative"
       },
@@ -26,8 +26,8 @@
           "png": "astro.png",
           "webp": "astronaut.webp"
         },
-        "description": "My passion for languages and cultures goes beyond wanting to achieve fluency it’s about actively embracing and engaging with diverse communities. This enthusiasm for cultural exploration enhances my ability to bridge perspectives across technical and business sectors, improving communication and collaboration. I leverage my social, technical, and linguistic skills to comprehend current challenges and apply innovative blockchain solutions effectively.",
-        "distance": "ENG/SPA/FRA",
+        "description": "My passion for languages and cultures goes beyond achieving fluency, it’s about actively embracing and engaging with diverse communities. This enthusiasm for cultural exploration enhances my ability to bridge perspectives across technical and business sectors, improving communication and collaboration. I maximize my skills to analyze and effectively apply innovative blockchain solutions.",
+        "distance": "ENG/SPA/FRE",
         "travel": "Blockchain"
       },
       {
@@ -49,7 +49,7 @@
           "webp": "icp.svg"
         },
         "role": "what is the",
-        "bio": "ICP is a platform that redefines blockchain technology by reconceptualizing it as a decentralized cloud computing environment. This innovation enables software to run not only securely but with high efficiency directly on the public internet, creating a serverless cloud."
+        "bio": "ICP radically rethinks blockchain as a decentralized cloud computing platform. This innovation enables software to run not only securely but with high efficiency directly on the public internet, creating a serverless cloud."
       },
       {
         "name": "Smart Contracts",
@@ -102,7 +102,7 @@
           "png": "astro.svg",
           "webp": "astro.svg"
         },
-        "description": "The Internet Computer transforms the developer experience by hosting both frontend and backend components entirely on-chain, establishing it as a holistic full-stack development platform. This innovative setup provides seamless integration across various languages like Rust, Python, Motoko and frameworks such as Svelte, React and Vue, offering the best development environment in the industry— it's only getting better!"
+        "description": "The Internet Computer transforms the developer experience by hosting both frontend and backend components entirely on-chain, establishing it as a full-stack development platform. This innovative setup provides seamless integration across various languages like Rust, Python, Motoko and frameworks such as Svelte, React and Vue, offering the best development environment in the industry— it's only getting better!"
       }
     ]
   }
