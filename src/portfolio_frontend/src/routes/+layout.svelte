@@ -20,22 +20,22 @@
     <ul id="primary-navigation" class="primary-navigation flex fw-200 uppercase"
         class:visible={$isVisible}>
       <li class="active">
-        <a href="#home">
+        <a href="#whoami">
           <span aria-hidden="true">00</span>Home
         </a>
       </li>
       <li>
-        <a href="#about">
+        <a href="#start">
           <span aria-hidden="true">01</span>About
         </a>
       </li>
       <li>
-        <a href="#blockchain">
+        <a href="#deploy">
           <span aria-hidden="true">02</span>Blockchain
         </a>
       </li>
       <li>
-        <a href="#links">
+        <a href="#linktree">
           <span aria-hidden="true">03</span>Contact
         </a>
       </li>
@@ -78,7 +78,7 @@
   }
   .primary-navigation a {
   --b: 0.1em;  
-  --c: #1095c1; 
+  --c: #726e71; 
   
   color: #ffff;
   padding-block: var(--b);

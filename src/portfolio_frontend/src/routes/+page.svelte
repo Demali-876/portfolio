@@ -18,16 +18,16 @@
     activeTab = tab;
   }
 </script>
-<div class="display-grid gap-2 margin-btm-3">
+<div class="display-grid gap-2 margin-btm-3" id="home">
   <main class="lh-100 margin-top-4 margin-left">
     <h1 class="uppercase fw-100 fs-500 margin-block-index clr-light">So, Blockchain is the new<br><span class="bold ff-serif">Cloud</span></h1>
-    <p class="text-width main-p fw-100 clr-light">It's not a dream; it’s a reality unfolding powered by the Internet Computer Protocol. <b>Hi! I'm Demali</b>, a blockchain solution architect. Welcome to my and now our shared exploration of this new frontier, a recognition of the eventuality for blockchain to transform every facet of existing systems, services, and the very fabric of current society.</p>
+    <p class="text-width main-p fw-100 clr-light">It's not a dream; it’s a reality unfolding powered by the Internet Computer Protocol. Hi! I'm Demali, a blockchain solution architect. Welcome to my and now our shared exploration of this new frontier, a recognition of the eventuality for blockchain to transform every facet of existing systems, services, and the very fabric of society.</p>
   </main>
   <div>
-    <a href="#about" class="explore-btn ff-serif uppercase">Explore</a>
+    <a href="#start" class="explore-btn ff-serif uppercase">Explore</a>
   </div>
  </div>
- <main>
+ <main id="whoami">
   <h1 class="uppercase fw-100 fs-500 margin-btm-3 h1-margin-left margin-top-3">
     <span class="clr-light">01 </span>DFX identity whoami
   </h1>
@@ -68,7 +68,7 @@
     </div>
   </div>
 </main>
-<main >
+<main id = "start">
   <h1 class="uppercase fw-100 fs-500 margin-btm-3 h1-margin-left margin-top-3"><span class="clr-light">02 </span>dfx start</h1>
   <div class="display-grid gap-2 margin-top-4 margin-left">
       <div class=" crew img-part justify-content-center display-flex">
@@ -89,7 +89,7 @@
       </div>
   </div>
 </main>
-<main>
+<main id="deploy">
   <h1 class="uppercase fw-100 fs-500 margin-btm-3 h1-margin-left margin-top-3"><span class="clr-light">03</span> dfx deploy</h1>
   <div class="tech display-grid gap-2 margin-top-4 margin-left margin-btm-3">
     <picture class="img-part">
@@ -118,13 +118,13 @@
     </div>
   </div>
 </main>
-<section class="main">
+<section class="main" id="linktree">
   <div class="container">
     <div class="container_component">
       <div class="profile">
         <div class="profile_image"></div>
         <div class="text text_center text_large">
-          <span class="crew-member ff-serif margin-btm-2 fw-100 uppercase fs-600">Demali</span>
+          <span class="crew-member ff-serif margin-btm-2 fw-100 uppercase fs-600">Demali.icp</span>
         </div>
         <div class="text text_center">
           <h4 class="crew-member-role ff-serif fw-100 margin-btm-1 margin-top-3 uppercase">Motoko Developer</h4>
@@ -178,14 +178,14 @@
       </div>
       <div class="container_link">
         <div class="link_outer">
-          <a href="https://github.com/Demali-876/portfolio/tree/master"  class="link link_circle link_circle_shadow" style="background-color: #321033;">
+          <a href="https://nuance.xyz/elcommandante/5155-434go-diaaa-aaaaf-qakwq-cai/the-superiority-of-decentralized-systems"  class="link link_circle link_circle_shadow" style="background-color: #321033;">
             <div class="link_icon">
               <!-- svelte-ignore a11y-missing-attribute -->
               <img class="link_image" src="nuance.svg">
             </div>
             <div class="link_outer_text">
               <div class="text text_center ">
-                <strong class=" fw-100 clr-light">Blog</strong>
+                <strong class=" fw-100 clr-light">Nuance Article</strong>
               </div>
             </div>
             <div class="link_end"></div>
@@ -193,7 +193,7 @@
       </div>
       <div class="container_link">
         <div class="link_outer">
-          <a href="https://github.com/Demali-876/portfolio/tree/master"  class="link link_circle link_circle_shadow" style="background-color: #321033;">
+          <a href="https://kit.svelte.dev/"  class="link link_circle link_circle_shadow" style="background-color: #321033;">
             <div class="link_icon">
               <!-- svelte-ignore a11y-missing-attribute -->
               <img class="link_image" src="svelte.svg">
