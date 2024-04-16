@@ -2,8 +2,26 @@
   import { writable } from 'svelte/store';
 
   const isVisible = writable(false);
-  function toggleMenu() {
-    isVisible.update(n => !n);
+  export function toggleMenu(callback) {
+    isVisible.update(value => {
+      const newValue = !value;
+      if (callback && !newValue) {
+        setTimeout(callback, 300); 
+      }
+      return newValue;
+    });
+  }
+  function smoothScrollTo(targetId) {
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+  function handleNavLinkClick(targetId) {
+    toggleMenu(() => smoothScrollTo(targetId));
   }
 </script>
 
@@ -12,30 +30,32 @@
 </svelte:head>
 <header class="primary-header flex">
   <div>
-    <a href="#home"><img src="/icp-logo.svg" alt="IcpLogo" style="height: 36px;" class="logo"></a>
+    <a href="#home" on:click={() => handleNavLinkClick('home')}>
+      <img src="/icp-logo.svg" alt="IcpLogo" style="height: 36px;" class="logo">
+    </a>
   </div>
-  <button class="mobile-nav-toggle" on:click={toggleMenu} 
-          aria-expanded={$isVisible}></button>
+  <button class="mobile-nav-toggle" on:click={() => toggleMenu(null)}
+          aria-controls="primary-navigation" aria-expanded={$isVisible}>
+  </button>
   <nav>
-    <ul id="primary-navigation" class="primary-navigation flex fw-200 uppercase"
-        class:visible={$isVisible}>
+    <ul id="primary-navigation" class="primary-navigation flex fw-200 uppercase" class:visible={$isVisible}>
       <li class="active">
-        <a href="#whoami">
+        <a href="#whoami" on:click={() => handleNavLinkClick('whoami')}>
           <span aria-hidden="true">00</span>Home
         </a>
       </li>
       <li>
-        <a href="#start">
+        <a href="#start" on:click={() => handleNavLinkClick('start')}>
           <span aria-hidden="true">01</span>About
         </a>
       </li>
       <li>
-        <a href="#deploy">
+        <a href="#deploy" on:click={() => handleNavLinkClick('deploy')}>
           <span aria-hidden="true">02</span>Blockchain
         </a>
       </li>
       <li>
-        <a href="#linktree">
+        <a href="#linktree" on:click={() => handleNavLinkClick('linktree')}>
           <span aria-hidden="true">03</span>Contact
         </a>
       </li>
