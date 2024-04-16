@@ -17,7 +17,7 @@
   <button class="mobile-nav-toggle" on:click={toggleMenu} 
           aria-expanded={$isVisible}></button>
   <nav>
-    <ul id="primary-navigation" class="primary-navigation flex"
+    <ul id="primary-navigation" class="primary-navigation flex fw-200 uppercase"
         class:visible={$isVisible}>
       <li class="active">
         <a href="#home">
