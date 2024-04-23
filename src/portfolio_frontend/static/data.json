@@ -6,7 +6,7 @@
           "png": "astronaut.webp",
           "webp": "astronaut.webp"
         },
-        "description": "Internet Computer Astronaut, builder of the digital future. With a solid computer science background, I specialize in crafting decentralized applications on the Internet Computer Protocol. My focus? Transforming operations by leveraging blockchain to enhance data integrity and fostering innovation.",
+        "description": "Internet computer astronaut, Motoko Bootcamp graduate and builder of the digital future. With a solid computer science background, I specialize in crafting decentralized applications on the Internet Computer Protocol. My focus? Transforming operations by leveraging blockchain to enhance data integrity and fostering innovation.",
         "distance": "ICP & Motoko",
         "travel": "Dev/PM"
       },
@@ -36,7 +36,7 @@
           "png": "astro.png",
           "webp": "astronaut.webp"
         },
-        "description": "Enterprise Architecture (EA) is the strategic backbone of my blockchain solutions. Motoko supports modularity, allowing developers to create reusable, maintainable components (canisters). This aligns with EA by structuring solutions to meet identified requirements and enhances Software Oriented Architecture (SOA) by facilitating scalable, flexible service communication across networks. Motoko's features underpin robust, well-integrated blockchain solutions.",
+        "description": "Enterprise Architecture (EA) is the strategic backbone of my blockchain solutions. Motoko supports modularity, allowing developers to create reusable, maintainable components (canisters). This aligns with EA by structuring solutions to meet identified requirements and enhances Service Oriented Architecture (SOA) by facilitating scalable, flexible service communication across networks. Motoko's features underpin robust, well-integrated blockchain solutions.",
         "distance": "On-Chain!",
         "travel": "Let's Build!"
       }

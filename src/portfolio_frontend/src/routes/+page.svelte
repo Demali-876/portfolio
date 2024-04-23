@@ -59,7 +59,7 @@
       </nav>
       <h2 class="destination-place margin-btm-1 margin-top-3 ff-serif fs-800 fw-100 uppercase">Explorer</h2>
       <p class="btm-line description main-p fw-100 clr-light text-width">
-        Internet Computer Astronaut, builder of the digital future. With a solid computer science background, I specialize in crafting decentralized applications on the Internet Computer Protocol. My focus? Transforming operations by leveraging blockchain to enhance data integrity and fostering innovation.
+        Internet computer astronaut, Motoko Bootcamp graduate and builder of the digital future. With a solid computer science background, I specialize in crafting decentralized applications on the Internet Computer Protocol. My focus? Transforming operations by leveraging blockchain to enhance data integrity and fostering innovation.
       </p>
       <div class="justify-content-center display-flex"><div class="destination-underline"></div></div>
       <div class="numbers-info justify-content-center display-flex gap-2">
@@ -186,7 +186,7 @@
         </div>
         <div class="container_link">
           <div class="link_outer">
-            <a href="https://github.com/Demali-876" class="link link_circle link_circle_shadow" style="background-color: #321033;">
+            <a href="https://github.com/Demali-876" target="_blank" rel="noopener noreferrer" class="link link_circle link_circle_shadow" style="background-color: #321033;">
               <div class="link_icon">
                 <!-- svelte-ignore a11y-missing-attribute -->
                 <img class="link_image" src="github.svg">
@@ -204,7 +204,7 @@
       </div>
       <div class="container_link">
         <div class="link_outer">
-          <a href="https://nuance.xyz/elcommandante/5155-434go-diaaa-aaaaf-qakwq-cai/the-superiority-of-decentralized-systems"  class="link link_circle link_circle_shadow" style="background-color: #321033;">
+          <a href="https://nuance.xyz/elcommandante/5155-434go-diaaa-aaaaf-qakwq-cai/the-superiority-of-decentralized-systems"  target="_blank" rel="noopener noreferrer" class="link link_circle link_circle_shadow" style="background-color: #321033;">
             <div class="link_icon">
               <!-- svelte-ignore a11y-missing-attribute -->
               <img class="link_image" src="nuance.svg">
@@ -219,7 +219,7 @@
       </div>
       <div class="container_link">
         <div class="link_outer">
-          <a href="https://kit.svelte.dev/"  class="link link_circle link_circle_shadow" style="background-color: #321033;">
+          <a href="https://kit.svelte.dev/" target="_blank" rel="noopener noreferrer"  class="link link_circle link_circle_shadow" style="background-color: #321033;">
             <div class="link_icon">
               <!-- svelte-ignore a11y-missing-attribute -->
               <img class="link_image" src="svelte.svg">
@@ -234,7 +234,7 @@
       </div>
       <div class="container_link">
         <div class="link_outer">
-          <a href="https://internetcomputer.org/" target="_blank"  class="link link_circle link_circle_shadow" style="background-color: #321033;">
+          <a href="https://internetcomputer.org/" target="_blank" rel="noopener noreferrer"  class="link link_circle link_circle_shadow" style="background-color: #321033;">
             <div class="link_icon">
               <!-- svelte-ignore a11y-missing-attribute -->
               <img class="link_image" src="icp-logo.svg">
